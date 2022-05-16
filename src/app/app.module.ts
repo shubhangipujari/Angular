@@ -11,6 +11,7 @@ import { AlinesComponent } from './AdminModule/ManageAirlines/alines/alines.comp
 import { AddairlineComponent } from './AdminModule/ManageAirlines/addairline/addairline.component';
 import { SchedulesComponent } from './AdminModule/ManageSchedules/schedules/schedules.component';
 import { AddschedulesComponent } from './AdminModule/ManageSchedules/addschedules/addschedules.component';
+import { BookingComponent } from './UserModule/Booking/booking/booking.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { AddschedulesComponent } from './AdminModule/ManageSchedules/addschedule
     AlinesComponent,
     AddairlineComponent,
     SchedulesComponent,
-    AddschedulesComponent
+    AddschedulesComponent,
+    BookingComponent
   
   
   ],
