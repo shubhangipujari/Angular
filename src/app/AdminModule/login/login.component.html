@@ -1,0 +1,38 @@
+<section class="vh-100" style="background-color: #508bfc;">
+    <div class="container py-4 h-100">
+        <form >
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-left">
+
+                        <h3 class="mb-4">Login in</h3>
+
+                        <div class="form-outline mb-4">
+                            
+                            <label for="validationDefault01">Email Id</label>
+                            <input type="email" class="form-control" name="email" [(ngModel)]="email" id="validationTooltip01" placeholder="Enter Email" required>
+                            <div class="invalid-tooltip">
+                              Please Enter Email
+                            </div>
+                          
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label for="validationTooltip02">Password</label>
+                            <input type="password" class="form-control" name="password" [(ngModel)]="password"
+                                id="validationTooltip02" placeholder="Password" required>
+                                <div class="invalid-tooltip">
+                                    Please Enter Password.
+                                  </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-lg btn-block" (click)="login()" type="submit">Login</button>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+</section>
