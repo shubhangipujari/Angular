@@ -12,6 +12,8 @@ import { AddairlineComponent } from './AdminModule/ManageAirlines/addairline/add
 import { SchedulesComponent } from './AdminModule/ManageSchedules/schedules/schedules.component';
 import { AddschedulesComponent } from './AdminModule/ManageSchedules/addschedules/addschedules.component';
 import { BookingComponent } from './UserModule/Booking/booking/booking.component';
+import { TicketmodifyComponent } from './UserModule/ticketmodify/ticketmodify.component';
+import { ViewbypnrComponent } from './UserModule/viewbypnr/viewbypnr.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,9 @@ import { BookingComponent } from './UserModule/Booking/booking/booking.component
     AddairlineComponent,
     SchedulesComponent,
     AddschedulesComponent,
-    BookingComponent
+    BookingComponent,
+    TicketmodifyComponent,
+    ViewbypnrComponent
   
   
   ],

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/Models/user';
 import { AdminserviceService } from 'src/app/Service/adminservice.service';
@@ -10,22 +10,22 @@ import { AdminserviceService } from 'src/app/Service/adminservice.service';
 })
 export class RegisterComponent implements OnInit {
 
-  userData:User=new User();
-  constructor(private service:AdminserviceService,private router:Router) { }
-
- 
+  userData: User = new User();
+  statusCode = 0
+  constructor(private service: AdminserviceService, private router: Router) { }
   ngOnInit(): void {
   }
 
-  register()
-  {
-   
+  register() {
     this.service.registerUser(this.userData).subscribe(data => {
-      console.log(data)
-    
-    // this.router.navigate(['/login'])
+      if (data) {
+        this.statusCode = 201;
+        this.router.navigate(['/login'])
+      }
     },
       err => console.log(err));
-  
+
   }
+
+ 
 }

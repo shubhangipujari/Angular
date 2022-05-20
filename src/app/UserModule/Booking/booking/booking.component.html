@@ -1,1 +1,154 @@
-<p>booking works!</p>
+<section class="vh-100" style="background-color: #a7c0ee;">
+    <div class="container py-4 h-100">
+        <form>
+            <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-left">
+
+                    <h3 class="mb-4">Schedules</h3>
+
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="FromPlace">From Place</label>
+                            <input type="text" class="form-control" name="FromPlace" [(ngModel)]="FromPlace">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="ToPlace">To Place</label>
+                            <input type="text" class="form-control" name="ToPlace" [(ngModel)]="ToPlace">
+                        </div>
+                        <div class="form-group col-md-4" style="margin-top: 27px;">
+
+                            <button class="btn btn-primary btn-lg btn-block" style="background-color: darkblue;"
+                                (click)="search()">Search</button>
+
+                        </div>
+                        <!-- <div class="form-group col-md-3">
+                            <label for="StartDateTime">Start DateTime</label>
+                            <input type="datetime-local" class="form-control" name="StartDateTime"
+                                [(ngModel)]="scheduleData.StartDateTime">
+                        </div>
+
+
+                        <div class="form-group col-md-3">
+                            <label for="EndDateTime">End DateTime</label>
+                            <input type="datetime-local" class="form-control" name="EndDateTime"
+                                [(ngModel)]="scheduleData.EndDateTime">
+                        </div> -->
+                    </div>
+
+                    <hr style="border-top: 1px solid #000000fa">
+
+                    <h3 class="mb-4">Booking List</h3>
+
+                    <div class="row">
+                        <table class="table  table-bordered">
+                            <thead style="background-color:darkblue;border: 1;">
+                                <tr style="color: white;">
+                                    <th>Edit</th>
+                                    <th>Flight Number</th>
+                                    <th>Flight Name</th>
+                                    <th>Place</th>
+                                    <th> Start Date</th>
+                                    <th> End Date</th>
+                                    <th>Ticket Cost</th>
+                                    <th>Choosed Way</th>
+                                    <th>Buisness Seat</th>
+                                    <th>Non-Buisness Seat</th>
+                                    <th>Rows</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let val of scheduleDetails">
+                                    <td> <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                                            (click)="BookTicketOpen(val)" data-target="#exampleModal">
+                                            Book
+                                        </button>
+
+
+
+                                    </td>
+                                    <td>{{ val.flightNumber}}</td>
+                                    <td>{{ val.flightName}}</td>
+                                    <td>{{ val.fromPlace+" To "+val.toPlace }}</td>
+                                    <td>{{ val.startDateTime | date:'dd-MM-yyyy HH:mm:ss' }} </td>
+                                    <td>{{ val.endDateTime | date:'dd-MM-yyyy HH:mm:ss'}}</td>
+                                    <td>{{ val.ticketCost}}</td>
+                                    <td>{{ val.chooseWay=="O"?"Oneway":"Round Trip"}}</td>
+                                    <td>{{ val.totNumBuisSeat}}</td>
+                                    <td>{{ val.totNumNonbuisSeat}}</td>
+                                    <td>{{ val.numberOfRows}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+
+                                    <h5 class="modal-title" id="exampleModalLabel">Book Ticket</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="form-group col-md-2"></div>
+                                        <div *ngIf="statusCode==201" class="alert alert-success" role="alert">
+                                            Booking Done. Your PNR Number is <strong>{{this.pnrNumber}}</strong> </div>
+
+                                        <div *ngIf="statusCode==400" class="alert alert-danger" role="alert">
+                                            Booking Already Created with PRN Number is <strong>{{this.pnrNumber}}</strong>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="row" *ngIf="visible==true">
+
+                                        <div class="form-group col-md-2">
+
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="seatnumber">Seat Number</label>
+                                            <input type="text" [(ngModel)]="bookingdata.SeatNumber" class="form-control"
+                                                name="seatnumber">
+
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="MealPreference">Meal Preference</label>
+                                            <select name="MealPreference" [(ngModel)]="bookingdata.MealPreferene"
+                                                class="form-control">
+                                                <option value="V">Veg</option>
+                                                <option value="N">Non-veg</option>
+                                            </select>
+                                        </div>
+
+
+
+
+
+
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" *ngIf="visible==true"
+                                        style="background-color: darkblue;" (click)="BookTicket()">Save
+                                        changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,3 +1,83 @@
+<section class="vh-100" style="background-color: #a7c0ee;">
+    <div class="container py-4 h-100">
+        <form>
+            <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-left">
+                  
+                    <h3 class="mb-4">Airlines</h3>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="inputName1">Name</label>
+                            <input type="text" class="form-control" name="inputName1" [(ngModel)]="airlineData.AirlineName"
+                                placeholder="Enter Name">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputlogo">Logo</label>
+                            <input type="text" class="form-control" name="inputlogo" [(ngModel)]="airlineData.Logo"
+                                placeholder="Enter Name">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputContactNumber2">Contact Number</label>
+                            <input type="text" maxlength="10" class="form-control" name="inputContactNumber2"
+                                [(ngModel)]="airlineData.ContactNumber" placeholder="Enter Name">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <div class="form-check " style="margin-top: 28px;">
+                                <input class="form-check-input" name="IsBlocked" [(ngModel)]="airlineData.IsBlocked"
+                                    type="checkbox" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Blocked Status</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="inputContactAddress2">Contact Address</label>
+                            <textarea type="text" row="1" name="inputContactAddress2" class="form-control"
+                                [(ngModel)]="airlineData.ContactAddress"></textarea>
+                        </div>
+                     
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-4"></div>
+                        <div class="form-group col-md-4"></div>
+                        <div class="form-group col-md-4">
+                            <button *ngIf="Id==0" class="btn btn-primary btn-lg btn-block" style="background-color: darkblue;" (click)="Save()">Save</button>
+                            <button *ngIf="Id!=0"  class="btn btn-primary btn-lg btn-block" style="background-color: darkblue;" (click)="Save()">Update</button>
+
+                        </div>
+                    </div>
+
+                    <hr style="border-top: 1px solid #000000fa">
+
+                    <h3 class="mb-4">List</h3>
 
 
-<p>alines works!</p>
+                    <table class="table  table-bordered">
+                        <thead style="background-color:darkblue;border: 1;" >
+                            <tr style="color: white;" >
+                                <th>Edit</th>
+                                <th>Name</th>
+                                <th>Contact Number</th>
+                                <th>Contact Address</th>
+                                <th>Is Blocked</th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let val of airlineDetails">
+                                <td><a style="cursor:pointer;" (click)="edit(val)"> <i class="fa-regular fa-pen-to-square"></i></a></td>
+                                <td>{{ val.airlineName }}</td>
+                                <td>{{ val.contactNumber}}</td>
+                                <td>{{ val.contactAddress}}</td>
+                                <td>{{ val.isBlocked }}</td>
+                              </tr>
+                        
+                        </tbody>
+                      </table>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+</section>

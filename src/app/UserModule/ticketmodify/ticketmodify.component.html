@@ -1,0 +1,67 @@
+<section class="vh-100" style="background-color: #a7c0ee;">
+    <div class="container py-4 h-100">
+        <form>
+            <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-left">
+
+                    <h3 class="mb-4">Bookings</h3>
+
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="email">Enter User Email Id</label>
+                            <input type="email" class="form-control" name="email" [(ngModel)]="Email">
+                        </div>
+
+                        <div class="form-group col-md-4" style="margin-top: 27px;">
+                            <button class="btn btn-primary btn-lg btn-block" style="background-color: darkblue;"
+                                (click)="search()">Get Booking Details </button>
+
+                        </div>
+
+                    </div>
+
+                    <hr style="border-top: 1px solid #000000fa">
+
+                    <h3 class="mb-4">Booking List</h3>
+                    
+                    <div class="row">
+                        <table class="table  table-bordered">
+                            <thead style="background-color:darkblue;border: 1;">
+                                <tr style="color: white;">
+                                  
+                                    <th>Flight Name</th>
+                                    <th>Flight Number</th>
+                                    <th>From Place</th>
+                                    <th>To Place</th>
+                                    <th>Start Date Time</th>
+                                    <th>End Date Time</th>
+                                    <th>Meal Preference</th>
+                                    <th>Cost</th>
+                                    <th>Seat Number</th>
+                                    <th>PNR Number</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let val of combinedList1">
+                                   
+                                    <td>{{ val.flightName}}</td>
+                                    <td>{{ val.flightNumber}}</td>
+                                    <td>{{ val.fromPlace}}</td>
+                                    <td>{{ val.toPlace}}</td>
+                                    <td>{{ val.startDateTime | date:'dd-MM-yyyy HH:mm:ss' }}</td>
+                                    <td>{{ val.endDateTime | date:'dd-MM-yyyy HH:mm:ss' }}</td>
+                                    <td>{{ val.mealPreferene=="V"?"Veg":"Non-Veg"}}</td>
+                                    <td>{{ val.cost}}</td>
+                                    <td>{{ val.seatNumber}}</td>
+                                    <td>{{ val.pnrNumber}}</td>
+                                  
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

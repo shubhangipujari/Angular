@@ -4,6 +4,9 @@ import { LoginComponent } from './AdminModule/login/login.component';
 import { AlinesComponent } from './AdminModule/ManageAirlines/alines/alines.component';
 import { SchedulesComponent } from './AdminModule/ManageSchedules/schedules/schedules.component';
 import { RegisterComponent } from './AdminModule/register/register.component';
+import { BookingComponent } from './UserModule/Booking/booking/booking.component';
+import { TicketmodifyComponent } from './UserModule/ticketmodify/ticketmodify.component';
+import { ViewbypnrComponent } from './UserModule/viewbypnr/viewbypnr.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -11,6 +14,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'airlines', component: AlinesComponent },
   { path: 'schedules', component: SchedulesComponent },
+  { path: 'bookings', component: BookingComponent },
+  { path: 'ticketmodify', component: TicketmodifyComponent },
+  { path: 'pnrdetails', component: ViewbypnrComponent },
 
 
 ];

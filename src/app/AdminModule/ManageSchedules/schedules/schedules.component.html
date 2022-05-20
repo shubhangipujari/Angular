@@ -1,1 +1,164 @@
-<p>schedules works!</p>
+<section class="vh-100" style="background-color: #a7c0ee;">
+    <div class="container py-4 h-100">
+        <form>
+            <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-left">
+
+                    <h3 class="mb-4">Schedules</h3>
+                    <div class="row">
+
+                        <div class="form-group col-md-3">
+                            <label for="airlineName">Airline Name</label>
+                            <select [(ngModel)]="scheduleData.AirlineId" name="airlineName" class="form-control">
+                                <option *ngFor="let val of airlineDetails" [value]="val.id">{{val.airlineName}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="FlightNumber">Flight Number</label>
+                            <input type="text" class="form-control" name="FlightNumber"
+                                [(ngModel)]="scheduleData.FlightNumber">
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="flightname">Flight name</label>
+                            <input type="text" class="form-control" name="flightname"
+                                [(ngModel)]="scheduleData.FlightName">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="ScheduledDays">Scheduled Days</label>
+                            <select [(ngModel)]="scheduleData.ScheduledDays" name="ScheduledDays" class="form-control">
+                                <option value="M">Monday</option>
+                                <option value="T">Tuesday</option>
+                                <option value="W">Wedensday</option>
+                                <option value="H">Thrusday</option>
+                                <option value="F">Friday</option>
+                                <option value="S">Saturday</option>
+                                <option value="U">Sunday</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            <label for="FromPlace">From Place</label>
+                            <input type="text" class="form-control" name="FromPlace"
+                                [(ngModel)]="scheduleData.FromPlace">
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="ToPlace">To Place</label>
+                            <input type="text" class="form-control" name="ToPlace" [(ngModel)]="scheduleData.ToPlace">
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="StartDateTime">Start DateTime</label>
+                            <input type="datetime-local" class="form-control" name="StartDateTime"
+                                [(ngModel)]="scheduleData.StartDateTime">
+                        </div>
+
+
+                        <div class="form-group col-md-3">
+                            <label for="EndDateTime">End DateTime</label>
+                            <input type="datetime-local" class="form-control" name="EndDateTime"
+                                [(ngModel)]="scheduleData.EndDateTime">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            <label for="InstrumentUsed">Instrument Used</label>
+                            <input type="text" class="form-control" name="InstrumentUsed"
+                                [(ngModel)]="scheduleData.InstrumentUsed">
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="TotNumBuisSeat">Buisness Seats</label>
+                            <input type="number" class="form-control" name="TotNumBuisSeat"
+                                [(ngModel)]="scheduleData.TotNumBuisSeat">
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="TotNumNonbuisSeat">Non-Buisness Seats</label>
+                            <input type="number" class="form-control" name="TotNumNonbuisSeat"
+                                [(ngModel)]="scheduleData.TotNumNonbuisSeat">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="TicketCost">Ticket Cost</label>
+                            <input type="number" class="form-control" name="TicketCost"
+                                [(ngModel)]="scheduleData.TicketCost">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            <label for="NumberOfRows">Number Of Rows</label>
+                            <input type="number" class="form-control" name="NumberOfRows"
+                                [(ngModel)]="scheduleData.NumberOfRows">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="Meal">Meal</label>
+                            <select [(ngModel)]="scheduleData.Meal" name="Meal" class="form-control">
+                                <option value="O">None</option>
+                                <option value="V">Veg</option>
+                                <option value="N">Non-Veg</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="ChooseWay">Choose Way</label>
+                            <select [(ngModel)]="scheduleData.ChooseWay" name="ChooseWay" class="form-control">
+                                <option value="O">OneWay</option>
+                                <option value="R">Round Trip</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4"></div>
+                        <div class="form-group col-md-4"></div>
+                        <div class="form-group col-md-4">
+                            <button *ngIf="Id==0" class="btn btn-primary btn-lg btn-block"
+                                style="background-color: darkblue;" (click)="Save()">Save</button>
+                            <button *ngIf="Id!=0" class="btn btn-primary btn-lg btn-block"
+                                style="background-color: darkblue;" (click)="Save()">Update</button>
+
+                        </div>
+                    </div>
+
+                    <hr style="border-top: 1px solid #000000fa">
+
+                    <h3 class="mb-4">List</h3>
+
+
+                    <table class="table  table-bordered">
+                        <thead style="background-color:darkblue;border: 1;">
+                            <tr style="color: white;">
+                                <th>Edit</th>
+                                <!-- <th>AirlineId</th> -->
+                                <th>Flight Number</th>
+                                <th>Flight Name</th>
+                                <th> Place</th>
+                                <th>Start Date Time</th>
+                                <th>End Date Time</th>
+                                <th>Ticket Cost</th>
+                                <th>Choosed Way</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let val of scheduleDetails">
+                                <td><a style="cursor:pointer;" (click)="edit(val)"> <i
+                                            class="fa-regular fa-pen-to-square"></i></a></td>
+                                <!-- <td>  {{ getAirlineName(val.airlineId) }}</td> -->
+                                <td>{{ val.flightNumber}}</td>
+                                <td>{{ val.flightName}}</td>
+                                <td>{{ val.fromPlace+" To "+val.toPlace }}</td>
+                                <td>{{ val.startDateTime}}</td>
+                                <td>{{ val.endDateTime}}</td>
+                                <td>{{ val.ticketCost}}</td>
+                                <td>{{ val.chooseWay}}</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
