@@ -8,12 +8,12 @@
 
                     <div class="row">
                         <div class="form-group col-md-4">
-                            <label for="FromPlace">From Place</label>
+                            <label for="FromPlace">From </label>
                             <input type="text" class="form-control" name="FromPlace" [(ngModel)]="FromPlace">
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label for="ToPlace">To Place</label>
+                            <label for="ToPlace">To </label>
                             <input type="text" class="form-control" name="ToPlace" [(ngModel)]="ToPlace">
                         </div>
                         <div class="form-group col-md-4" style="margin-top: 27px;">
@@ -44,16 +44,16 @@
                         <table class="table  table-bordered">
                             <thead style="background-color:darkblue;border: 1;">
                                 <tr style="color: white;">
-                                    <th>Edit</th>
+                                    <th>Flight Booking</th>
                                     <th>Flight Number</th>
                                     <th>Flight Name</th>
-                                    <th>Place</th>
-                                    <th> Start Date</th>
-                                    <th> End Date</th>
-                                    <th>Ticket Cost</th>
-                                    <th>Choosed Way</th>
-                                    <th>Buisness Seat</th>
-                                    <th>Non-Buisness Seat</th>
+                                   
+                                    <th> Departure Date</th>
+                                    <th> Arrival Date</th>
+                                    <th>Booking Amount</th>
+                                    <th>Trip</th>
+                                    <th>Buisness Class</th>
+                                    <th>Non-Buisness Class</th>
                                     <th>Rows</th>
                                 </tr>
                             </thead>
@@ -69,7 +69,7 @@
                                     </td>
                                     <td>{{ val.flightNumber}}</td>
                                     <td>{{ val.flightName}}</td>
-                                    <td>{{ val.fromPlace+" To "+val.toPlace }}</td>
+                                    
                                     <td>{{ val.startDateTime | date:'dd-MM-yyyy HH:mm:ss' }} </td>
                                     <td>{{ val.endDateTime | date:'dd-MM-yyyy HH:mm:ss'}}</td>
                                     <td>{{ val.ticketCost}}</td>
@@ -100,10 +100,10 @@
                                     <div class="row">
                                         <div class="form-group col-md-2"></div>
                                         <div *ngIf="statusCode==201" class="alert alert-success" role="alert">
-                                            Booking Done. Your PNR Number is <strong>{{this.pnrNumber}}</strong> </div>
+                                            Booking Done Successfully, Your PNR Number is <strong>{{this.pnrNumber}}</strong> </div>
 
                                         <div *ngIf="statusCode==400" class="alert alert-danger" role="alert">
-                                            Booking Already Created with PRN Number is <strong>{{this.pnrNumber}}</strong>
+                                            Booking Alreay Done with PRN Number <strong>{{this.pnrNumber}}</strong>
                                         </div>
 
 

@@ -18,9 +18,9 @@ export class WelcomescreenComponent implements OnInit {
  message()
  {
   if(this.userrole=="A")
-  return "You can create airline, achedule for flight and view details by email Id"
+  return "You can create airline Details, schedule for flight and view details by email Id"
   else
-  return "You book flight view by PRN Number and Cancel the Ticket"
+  return "Book Flights anywhere with world's largest Flight Booking Platform, check your flight details and also ticket cancellation by PRN Number "
  }
 
 }

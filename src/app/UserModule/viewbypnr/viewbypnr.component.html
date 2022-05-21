@@ -28,15 +28,15 @@
                         <table class="table  table-bordered">
                             <thead style="background-color:darkblue;border: 1;">
                                 <tr style="color: white;">
-                                    <th>Cancel</th>
+                                    <th> Cancel Ticket</th>
                                     <th>Flight Name</th>
                                     <th>Flight Number</th>
-                                    <th>From Place</th>
-                                    <th>To Place</th>
-                                    <th>Start Date Time</th>
-                                    <th>End Date Time</th>
+                                    <th>From </th>
+                                    <th>To </th>
+                                    <th>Departure Date</th>
+                                    <th>Arrival Date</th>
                                     <th>Meal Preference</th>
-                                    <th>Cost</th>
+                                    <th>Booking Amount</th>
                                     <th>Seat Number</th>
                                     <th>PNR Number</th>
 
@@ -46,7 +46,7 @@
                                 <tr *ngFor="let val of combinedList">
                                     <td> <button type="button" class="btn btn-primary btn-sm" *ngIf="val.isCanceled==0"
                                             (click)="cancelTicket(val)" >
-                                            Cancel Ticket
+                                            <i class="fa-solid fa-trash"></i>
                                         </button>
                                         <span *ngIf="val.isCanceled==1"> Canceled Ticket</span>
                                     </td>
