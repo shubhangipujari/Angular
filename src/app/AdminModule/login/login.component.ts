@@ -33,12 +33,18 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', data['Token']['token'])
         localStorage.setItem("userrole", data['UserDetails']['roleName'])
         localStorage.setItem("userId", data['UserDetails']['id'])
-        let userrole=localStorage.getItem("userrole")
-        if(userrole=='A')
+        localStorage.setItem("userName", data['UserDetails']['name'])
 
-        this.router.navigate(['/airlines'])
-        else
-        this.router.navigate(['/bookings'])
+        this.router.navigate(['/welcome'])
+
+
+        // let userrole=localStorage.getItem("userrole")
+
+        // if(userrole=='A')
+
+        // this.router.navigate(['/airlines'])
+        // else
+        // this.router.navigate(['/bookings'])
 
         //this.router.navigateByUrl('/airlines', { skipLocationChange: true })
       }

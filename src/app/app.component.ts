@@ -72,7 +72,18 @@ export class AppComponent implements OnInit {
     }
   }
 
+Logged(input:boolean,role:string)
+{
+  if(input)
+  {
+    return (this.service.loggedIn() && localStorage.getItem("userrole")==role)
+  }
+  else
+  {
+    return !this.service.loggedIn();
 
+  }
+}
 
 
 }

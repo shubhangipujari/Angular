@@ -14,6 +14,7 @@ import { AddschedulesComponent } from './AdminModule/ManageSchedules/addschedule
 import { BookingComponent } from './UserModule/Booking/booking/booking.component';
 import { TicketmodifyComponent } from './UserModule/ticketmodify/ticketmodify.component';
 import { ViewbypnrComponent } from './UserModule/viewbypnr/viewbypnr.component';
+import { WelcomescreenComponent } from './AdminModule/welcomescreen/welcomescreen.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { ViewbypnrComponent } from './UserModule/viewbypnr/viewbypnr.component';
     AddschedulesComponent,
     BookingComponent,
     TicketmodifyComponent,
-    ViewbypnrComponent
+    ViewbypnrComponent,
+    WelcomescreenComponent
   
   
   ],

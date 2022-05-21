@@ -8,19 +8,19 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <!-- <span class="sr-only">(current)</span> -->
-        <a class="nav-link" style="cursor:pointer" *ngIf="roleName=='A'"  (click)="manageAirlines()">Manage Airlines </a>
+        <a class="nav-link" style="cursor:pointer" *ngIf="Logged(true,'A')"  (click)="manageAirlines()">Manage Airlines </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="cursor:pointer" *ngIf="roleName=='A'" (click)="manageSchedules()">Manage Schedules</a>
+        <a class="nav-link" style="cursor:pointer" *ngIf="Logged(true,'A')"  (click)="manageSchedules()">Manage Schedules</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="cursor:pointer" *ngIf="roleName=='A'" (click)="BookingDetails()">Booking Details</a>
+        <a class="nav-link" style="cursor:pointer" *ngIf="Logged(true,'A')"  (click)="BookingDetails()">Booking Details</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="cursor:pointer" *ngIf="roleName=='U'" (click)="manageBooking()"> Manage Bookings</a>
+        <a class="nav-link" style="cursor:pointer" *ngIf="Logged(true,'U')"  (click)="manageBooking()"> Manage Bookings</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="cursor:pointer" *ngIf="roleName=='U'" (click)="viewTickets()">View Tickets</a>
+        <a class="nav-link" style="cursor:pointer" *ngIf="Logged(true,'U')" (click)="viewTickets()">View Tickets</a>
       </li>
 
       <!-- <li class="nav-item">
