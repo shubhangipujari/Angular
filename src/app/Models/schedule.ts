@@ -5,8 +5,8 @@ export class Schedule {
     FlightName: string
     FromPlace: string
     ToPlace: string
-    StartDateTime: string
-    EndDateTime: string
+    StartDateTime:any
+    EndDateTime: any
     ScheduledDays: string = "M"
     InstrumentUsed: string
     TotNumBuisSeat: number

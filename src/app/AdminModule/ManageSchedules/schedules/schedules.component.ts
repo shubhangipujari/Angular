@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Airline1 } from 'src/app/Models/airline';
 import { Schedule, Schedule1 } from 'src/app/Models/schedule';
@@ -6,7 +7,8 @@ import { AdminserviceService } from 'src/app/Service/adminservice.service';
 @Component({
   selector: 'app-schedules',
   templateUrl: './schedules.component.html',
-  styleUrls: ['./schedules.component.css']
+  styleUrls: ['./schedules.component.css'],
+  providers: [DatePipe]
 })
 export class SchedulesComponent implements OnInit {
 
@@ -17,7 +19,7 @@ export class SchedulesComponent implements OnInit {
 
 
 
-  constructor(private service: AdminserviceService) { }
+  constructor(private service: AdminserviceService,private datePipe: DatePipe) { }
 
   ngOnInit(): void {
     this.getAllAirlines()
@@ -53,7 +55,7 @@ export class SchedulesComponent implements OnInit {
     this.scheduleData.FlightName = data.flightName
     this.scheduleData.FromPlace = data.fromPlace
     this.scheduleData.ToPlace = data.toPlace
-    this.scheduleData.StartDateTime = data.startDateTime
+    this.scheduleData.StartDateTime =  data.startDateTime
     this.scheduleData.EndDateTime = data.endDateTime
     this.scheduleData.ScheduledDays = data.scheduledDays
     this.scheduleData.InstrumentUsed = data.instrumentUsed
@@ -71,6 +73,11 @@ export class SchedulesComponent implements OnInit {
   // }
 
   Save() {
+
+
+ // this.scheduleData.StartDateTime=this.datePipe.transform(this.scheduleData.StartDateTime, 'yyyy-MM-dd HH:mm:ss')
+
+ // this.scheduleData.EndDateTime=this.datePipe.transform(this.scheduleData.EndDateTime, 'yyyy-MM-dd HH:mm:ss')
 
     if (this.Id != 0) {
       console.log("update")

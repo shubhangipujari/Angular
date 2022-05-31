@@ -21,14 +21,25 @@ export class BookingComponent implements OnInit {
   statusCode = 0
   pnrNumber = ""
   visible = true
-  
-  constructor(private service: AdminserviceService, public datepipe: DatePipe) { }
+  StartDateTime:any=""
+  Way:string="O"
+  constructor(private service: AdminserviceService, public datePipe: DatePipe) { }
 
   ngOnInit(): void {
   }
 
   search() {
-    this.service.getAllSearchSchedule(this.FromPlace, this.ToPlace).subscribe(data => {
+console.log("start date time",this.StartDateTime)
+
+this.StartDateTime=this.datePipe.transform(this.StartDateTime, 'yyyy-MM-dd HH:mm:ss')
+
+let str1=".000"
+let datetime=this.StartDateTime.concat(str1);
+
+
+console.log(datetime)
+
+    this.service.getAllSearchSchedule(this.FromPlace, this.ToPlace,datetime,this.Way).subscribe(data => {
       console.log(data)
       this.scheduleDetails = data
     },

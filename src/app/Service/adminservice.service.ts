@@ -84,8 +84,8 @@ export class AdminserviceService {
     return this.http.get<any>(this.scheduleUrl + "getScheduleDetail")
   }
 
-  getAllSearchSchedule(fromPlace: string, toPlace: string) {
-    return this.http.get<any>(this.scheduleUrl + "searchScheduleDetails?fromplace=" + fromPlace + "&toPlace=" + toPlace)
+  getAllSearchSchedule(fromPlace: string, toPlace: string, startDate: Date, chooseWay: string) {
+    return this.http.get<any>(this.scheduleUrl + "searchScheduleDetails?fromplace=" + fromPlace + "&toPlace=" + toPlace + "&depaturetime=" + startDate + "&chooedWay=" + chooseWay)
   }
 
   getBookingId(userId: number, scheduleId: number) {

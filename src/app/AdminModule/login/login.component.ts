@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
 
       if (data['Token']['token']) {
         this.statusCode = 200
-        localStorage.setItem('token', data['Token']['token'])
-        localStorage.setItem("userrole", data['UserDetails']['roleName'])
+       localStorage.setItem('token', data['Token']['token'])
+       localStorage.setItem("userrole", data['UserDetails']['roleName'])
         localStorage.setItem("userId", data['UserDetails']['id'])
         localStorage.setItem("userName", data['UserDetails']['name'])
 

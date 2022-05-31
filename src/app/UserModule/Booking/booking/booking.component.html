@@ -7,29 +7,35 @@
                     <h3 class="mb-4">Schedules</h3>
 
                     <div class="row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label for="FromPlace">From </label>
                             <input type="text" class="form-control" name="FromPlace" [(ngModel)]="FromPlace">
                         </div>
 
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label for="ToPlace">To </label>
                             <input type="text" class="form-control" name="ToPlace" [(ngModel)]="ToPlace">
                         </div>
-                        <div class="form-group col-md-4" style="margin-top: 27px;">
-
-                            <button class="btn btn-primary btn-lg btn-block" style="background-color: darkblue;"
-                                (click)="search()">Search</button>
-
-                        </div>
-                        <!-- <div class="form-group col-md-3">
-                            <label for="StartDateTime">Start DateTime</label>
-                            <input type="datetime-local" class="form-control" name="StartDateTime"
-                                [(ngModel)]="scheduleData.StartDateTime">
-                        </div>
-
-
                         <div class="form-group col-md-3">
+                            <label for="StartDateTime">Depature Date Time</label>
+                            <input type="datetime-local" class="form-control" name="StartDateTime"
+                                [(ngModel)]="StartDateTime">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputgeRnder">Trip</label>
+                            <select [(ngModel)]="Way" name="way" class="form-control">
+                                <option value="O">One Way</option>
+                                <option value="R">Round Trip</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-1" style="margin-top: 27px;">
+                            <button class="btn btn-primary btn-lg btn-block" style="background-color: darkblue;"
+                                (click)="search()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                      
+
+
+                        <!-- <div class="form-group col-md-3">
                             <label for="EndDateTime">End DateTime</label>
                             <input type="datetime-local" class="form-control" name="EndDateTime"
                                 [(ngModel)]="scheduleData.EndDateTime">
